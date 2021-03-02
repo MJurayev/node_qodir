@@ -1,0 +1,8 @@
+{
+    "jwtPrivateKey":"21Admin06",
+    "db":"mongodb://localhost:27017",
+    "appName":"My APp",
+    "smsApiSecret":"9BBHlbOektqJ6eJM",
+    "smsApiKey":"60244ab6",
+    "appLink":"https://jurayev.uz"
+}
