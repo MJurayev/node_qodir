@@ -1,6 +1,6 @@
 {
     "jwtPrivateKey":"21Admin06",
-    "db":"mongodb://localhost:27017",
+    "db":"mongodb+srv://deleted:21admin06@interpreter.0kfkg.mongodb.net/Mdata?retryWrites=true&w=majority",
     "appName":"My APp",
     "smsApiSecret":"9BBHlbOektqJ6eJM",
     "smsApiKey":"60244ab6",
