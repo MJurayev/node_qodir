@@ -1,6 +1,6 @@
 {
     "jwtPrivateKey":"21Admin06",
-    "db":"mongodb://localhost:27017/test",
+    "db":"mongodb://localhost:27017/node_test",
     "appName":"My APp",
     "smsApiSecret":"9BBHlbOektqJ6eJM",
     "smsApiKey":"60244ab6",

@@ -64,7 +64,7 @@ function validateUser(user){
 }
 
 function generateCode(n){
-    let s="", a=0;
+    let s="", a=1;
     while(a<=n){
         s+=Math.floor((Math.random()*1000)%10).toString()
         a++
