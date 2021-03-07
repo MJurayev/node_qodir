@@ -31,7 +31,9 @@ app.use('/api/visits', visitorRoute)
 app.use('/api/quiz', quizRoute)
 app.use('/api/result', resultRoute)
 app.use(errorMiddleware)
-
+app.get('*', (req, res)=>{
+    return res.send('addres topilmadi')
+})
 
 const PORT = 2000
 
