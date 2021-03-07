@@ -34,7 +34,7 @@ app.get('*', (req, res)=>{
     return res.send('addres topilmadi')
 })
 
-const PORT = 2000
+const PORT = 8080
 
 // winston.add(new winston.transports.File({filename:'./ErrorLog.log'}))
 
