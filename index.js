@@ -33,7 +33,7 @@ app.use('/api/result', resultRoute)
 app.use(errorMiddleware)
 
 
-const PORT = 8080||3004
+const PORT = 2000
 
 winston.add(new winston.transports.File({filename:'./ErrorLog.log'}))
 
