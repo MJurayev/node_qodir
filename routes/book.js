@@ -148,7 +148,15 @@ router.get('/:id', async (req, res) => {
       return res.status(404).send('Berilgan IDga teng bo\'lgan kiton topilmadi');
     return res.download(path.join(path.parse(__dirname).dir, book.filepath));
   });
-
+router.get('/image/:id', async (req, res)=>{
+    if (!mongoose.Types.ObjectId.isValid(req.params.id))
+      return res.status(404).send('Yaroqsiz id');
+  
+    let book = await Book.findById(req.params.id);
+    if (!book)
+      return res.status(404).send('Berilgan IDga teng bo\'lgan kiton topilmadi');
+    return res.sendFile(path.join(path.parse(__dirname).dir, book.imagepath));
+})
 router.get('/open/:id', async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id))
         return res.status(404).send('Yaroqsiz id');

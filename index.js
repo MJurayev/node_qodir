@@ -38,7 +38,7 @@ const PORT = 8080
 
 // winston.add(new winston.transports.File({filename:'./ErrorLog.log'}))
 
-app.use('/static',express.static(__dirname + '/uploads'));
+app.use(express.static(__dirname + '/uploads'));
 app.listen(PORT, ()=>{
     console.log(`${PORT} - eshitilmoqda`)
 })
