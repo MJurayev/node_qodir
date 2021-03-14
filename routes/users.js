@@ -12,7 +12,7 @@ router.use(express.json());
 
 
 //Get query /users:GET
-router.get('/', async (req, res)=>{
+router.get('/',auth, async (req, res)=>{
     const users =await User.find()
     .sort({login:1, isAdmin:1});
     return res.status(200).json(users);

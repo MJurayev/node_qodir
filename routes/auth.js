@@ -36,7 +36,6 @@ function validate(req) {
                 .min(5)
                 .email({minDomainSegments:2}) : Joi.string().min(5).max(255).required(),
         password: Joi.string().min(5).max(255).required(),
-        login:Joi.string().required()
     });
     return schema.validate(req);
 }
