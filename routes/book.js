@@ -72,9 +72,7 @@ router.post('/',auth, async (req, res) => {
                 name:req.body.name, 
                 filename:req.files.book[0].filename, 
                 filepath:req.files.book[0].path,
-                imagepath:req.files.image[0].path,
-                author:req.body.author,
-                category:req.body.category
+                imagepath:req.files.image[0].path
             }
     
             const savedBook = new Book(uploadedBook)
@@ -141,7 +139,7 @@ router.put('/:id',auth, async (req, res)=>{
 });
 
 
-router.get('/:id',auth, async (req, res) => {
+router.get('/:id', async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id))
       return res.status(404).send('Yaroqsiz id');
   
@@ -151,7 +149,7 @@ router.get('/:id',auth, async (req, res) => {
     return res.download(path.join(path.parse(__dirname).dir, book.filepath));
   });
 
-router.get('/open/:id', auth, async (req, res) => {
+router.get('/open/:id', async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id))
         return res.status(404).send('Yaroqsiz id');
 

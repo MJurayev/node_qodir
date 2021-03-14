@@ -40,7 +40,7 @@ bookSchema = new mongoose.Schema({
     }
 });
 
-function validateBook(book){
+function validateBook   (book){
     const schema = Joi.object(
         {
             name:Joi.string(),
