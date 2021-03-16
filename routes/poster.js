@@ -57,7 +57,7 @@ router.post('/',auth, async (req, res) => {
         
               
         uploadFile(req, res, async (err)=>{
-
+            if(err)return res.send(err);
         if(req.imageValidationError ){            
             return res.status(400).send(req.fileValidationError)
         }else if(req.fileValidationError){
@@ -137,13 +137,22 @@ router.put('/:id',auth, async (req, res)=>{
 });
 
 
-router.get('/:id',auth, async (req, res) => {
+router.get('/:id', async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id))
       return res.status(404).send('Yaroqsiz id');
     let poster = await Poster.findById(req.params.id);
     if (!poster)
       return res.status(404).send('Berilgan IDga teng bo\'lgan fayl topilmadi');
     return res.download(path.join(path.parse(__dirname).dir, poster.filepath));
+  });
+
+  router.get('/image/:id', async (req, res) => {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id))
+      return res.status(404).send('Yaroqsiz id');
+    let poster = await Poster.findById(req.params.id);
+    if (!poster)
+      return res.status(404).send('Berilgan IDga teng bo\'lgan fayl topilmadi');
+    return res.sendFile(path.join(path.parse(__dirname).dir, poster.imagepath));
   });
 
 
