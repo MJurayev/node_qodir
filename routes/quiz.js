@@ -9,6 +9,10 @@ router.get('/', auth , async (req, res)=>{
     return res.send(quiz)
 })
 
+router.get('/:id', auth , async (req, res)=>{
+    const quiz = await Quiz.findOne({_id:{$eq:req.params.id}})
+    return res.send(quiz)
+})
 router.post('/',auth, async (req, res)=>{
     console.log(req.body)
     const {error} = validator(req.body)
@@ -35,7 +39,6 @@ router.post('/check',auth ,async (req, res)=>{
     var answers = req.body.answers
     // console.log(answers)
     const quiz = await Quiz.findOne({_id:{$eq:req.body._id}})
-    console.log(quiz.questions)
     const correctAnswers = await answers.filter( x=>quiz.questions.find((question)=>(question._id == x._id && question.correctAnswer==x.answer) ? question :''))
     
     console.log(req.user)
