@@ -4,6 +4,7 @@ const app = express()
 const helmet = require('helmet')
 const winston = require('winston')
 const cors =  require('cors')
+const path = require('path')
 const errorMiddleware = require('./middleware/error')
 app.use(cors())
 app.use(express.json())
@@ -41,7 +42,7 @@ const PORT = 8080
 
 // winston.add(new winston.transports.File({filename:'./ErrorLog.log'}))
 
-app.use(express.static(__dirname + '/uploads'));
+app.use( '/uploads',express.static(path.join(__dirname, 'uploads')));
 app.listen(PORT, ()=>{
     console.log(`${PORT} - eshitilmoqda`)
 })

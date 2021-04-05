@@ -45,7 +45,7 @@ function quizValidate(quiz){
         answerB:Joi.string().required(),
         answerC:Joi.string().required(),
         answerD:Joi.string().required(),
-        correctAnswer:Joi.number().min(1).max(4).required()
+        correctAnswer:Joi.number().min(0).max(3).required()
     })
 
     const quizValidationSchema = Joi.object({
