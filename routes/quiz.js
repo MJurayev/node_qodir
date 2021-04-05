@@ -50,8 +50,7 @@ router.post('/check',auth ,async (req, res)=>{
     })
     const saveR = await saveResult.save()
     if(saveR)
-    return res.send(`Your mark is ${correctAnswers.length}/${quiz.questions.length}`)
-    
+    return res.json({correct:correctAnswers.length, questions:quiz.questions.length})
     res.send('Error while document writing')
     //write quiz result to database
 })
