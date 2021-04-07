@@ -1,0 +1,811 @@
+{
+	"info": {
+		"_postman_id": "83f6b078-f4cf-4d1d-ac78-af2723324727",
+		"name": "Nodejs Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"Mansurbek\",\r\n    \"password\":\"21admin06\",\r\n    \"authType\":\"email\",\r\n    \"payload\":\"jurayevmansurbek667@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "login",
+									"value": "Mansur",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "21admin06",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "jurayevmansurbek@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authType\":\"email\",\r\n    \"payload\":\"jurayevmansurbek667@gmail.com\",\r\n    \"password\":\"21admin06\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-platform.cleverapps.io/api/auth",
+							"protocol": "https",
+							"host": [
+								"node-platform",
+								"cleverapps",
+								"io"
+							],
+							"path": [
+								"api",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "login",
+									"value": "Mansur",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "21admin06",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "jurayevmansurbek@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDMzZWJhNmE4NDAyMDIzNjAwZDBlMGMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjE0MDE1NTcyfQ.dnE-yiaboqAxpzeKNdwDj98pQDc3EuDbl2LitrgYt1E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-platform.cleverapps.io/api/users",
+							"protocol": "https",
+							"host": [
+								"node-platform",
+								"cleverapps",
+								"io"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDMzZWJhNmE4NDAyMDIzNjAwZDBlMGMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjE0MDE3NTM2fQ.rU4Dg7FzIpCszXsK3iDDyYM3uFxxW1Ge70MLOudjBTs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3003/api/books/60361f78694d4f1138f423a0",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"books",
+								"60361f78694d4f1138f423a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kitob qo;shish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDMzZWJhNmE4NDAyMDIzNjAwZDBlMGMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjE0MDE3NTM2fQ.rU4Dg7FzIpCszXsK3iDDyYM3uFxxW1Ge70MLOudjBTs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Python darslari",
+									"type": "text"
+								},
+								{
+									"key": "book",
+									"type": "file",
+									"src": "/C:/Users/Mansur/Downloads/Telegram Desktop/2-HGI 2020 1 -kurs kunduzgi_65bae99d56b4ee1c38cef975a1d59ccf.pdf"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Mansur/Downloads/Telegram Desktop/charvak_1.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-platform.cleverapps.io/api/books",
+							"protocol": "https",
+							"host": [
+								"node-platform",
+								"cleverapps",
+								"io"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDMzZWJhNmE4NDAyMDIzNjAwZDBlMGMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjE0MDE3NTM2fQ.rU4Dg7FzIpCszXsK3iDDyYM3uFxxW1Ge70MLOudjBTs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bookName",
+									"value": "asdsadfdsf",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/all files/Telegram Desktop/2_5220125280445663866.pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3003/api/books/603409383ccc3e0d24eb3ffe",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"books",
+								"603409383ccc3e0d24eb3ffe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDMzZWJhNmE4NDAyMDIzNjAwZDBlMGMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjE0MDE3NTM2fQ.rU4Dg7FzIpCszXsK3iDDyYM3uFxxW1Ge70MLOudjBTs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bookName",
+									"value": "asdsadfdsf",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/all files/Telegram Desktop/2_5220125280445663866.pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3003/api/books/open/6034040566010a15d0fba305",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"books",
+								"open",
+								"6034040566010a15d0fba305"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDMzZWJhNmE4NDAyMDIzNjAwZDBlMGMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjE0MDE3NTM2fQ.rU4Dg7FzIpCszXsK3iDDyYM3uFxxW1Ge70MLOudjBTs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bookName",
+									"value": "asdsadfdsf",
+									"type": "text"
+								},
+								{
+									"key": "book",
+									"type": "file",
+									"src": "/D:/all files/Telegram Desktop/2_5220125280445663866.pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/poster",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"poster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDMzZWJhNmE4NDAyMDIzNjAwZDBlMGMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjE0MDQ4OTYwfQ.W4tASMBKH40cyxH6m2lxvJLWVYY1F60_AzPdQoRNo8I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bookName",
+									"value": "603491a668dcff2edc6a78e9asd",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/my phone clone/Download/2-09 Malumotlar Bazasi-2018.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3003/api/books/603491a668dcff2edc6a78e9",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"books",
+								"603491a668dcff2edc6a78e9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "poster",
+			"item": [
+				{
+					"name": "Get all poster",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/poster",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"poster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create poster",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDNhODZlOWVjZjQ3ZjA1Y2NlMTVmZWUiLCJpc0FkbWluIjpmYWxzZSwibG9naW4iOiJNYW5zdXIiLCJpYXQiOjE2MTU4MjI3NDZ9.3jYITzstIfuKn1T1w_uppsKzjqiB861oqU_YC24vCAE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "asdfgsdfgsdfg",
+									"type": "text"
+								},
+								{
+									"key": "poster",
+									"type": "file",
+									"src": "/C:/Users/Mansur/Downloads/Telegram Desktop/1-Laboratoriya ishi .docx"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Mansur/Downloads/Telegram Desktop/charvak_1.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/poster",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"poster"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "verification",
+			"item": [
+				{
+					"name": "req token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":\"03627\",\r\n    \"type\":\"email\",\r\n    \"payload\":\"jurayevmansurbek\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/verification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"verification"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "visits",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quiz",
+			"item": [
+				{
+					"name": "Create Quiz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDNhODZlOWVjZjQ3ZjA1Y2NlMTVmZWUiLCJpc0FkbWluIjpmYWxzZSwibG9naW4iOiJNYW5zdXIiLCJpYXQiOjE2MTc0MjQyNDJ9.VR7Hy4fvS9CSjHl5UJuo01BguDE9TmIcaDlvdHBpf1Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizName\":\"Jismoniy tarbiya asoslari testi\",\r\n    \"questions\":[\r\n        {\r\n            \"questionString\":\"Basketbol so'zining ma'nosi, Basketbol so'zining ma'nosi,Basketbol so'zining ma'nosi,Basketbol so'zining ma'nosi\",\r\n            \"correctAnswer\":0,\r\n            \"answerA\":\"Savat to'p o'yini\",\r\n            \"answerB\":\"22\",\r\n            \"answerC\":\"3\",\r\n            \"answerD\":\"4\"\r\n        },\r\n        {\r\n            \"questionString\":\"Ko'pburchakning nechta yoqi bor\",\r\n             \"correctAnswer\":3,\r\n            \"answerA\":\"23\",\r\n            \"answerB\":\"3\",\r\n            \"answerC\":\"2\",\r\n            \"answerD\":\"4\"\r\n        },\r\n        {\r\n            \"questionString\":\"Uchbirchak yuzasi nimaga teng?\",\r\n             \"correctAnswer\":0,\r\n            \"answerA\":\"balandlik va asos ko'paytmasiga\",\r\n            \"answerB\":\"2\",\r\n            \"answerC\":\"0\",\r\n            \"answerD\":\"10\"\r\n        },\r\n        {\r\n            \"questionString\":\"Uchbirchak yuzasi qanday hisoblanadi?\",\r\n             \"correctAnswer\":3,\r\n            \"answerA\":\"23a\",\r\n            \"answerB\":\"a*h\",\r\n            \"answerC\":\"Geron gormulasidan\",\r\n            \"answerD\":\"10\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/quiz",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Quiz",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDNhODZlOWVjZjQ3ZjA1Y2NlMTVmZWUiLCJpc0FkbWluIjpmYWxzZSwibG9naW4iOiJNYW5zdXIiLCJpYXQiOjE2MTY4MjY4ODl9.9F0NDlHITGLZ1W82GMSR9wom8zv8R8SSZfTSWXPLGYM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/quiz/603bea396107df1068522bb2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"quiz",
+								"603bea396107df1068522bb2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Quiz",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/quiz/603be76c28f41023a0a0dffe",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"quiz",
+								"603be76c28f41023a0a0dffe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Quiz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDNjYjM5MzljNDk4NjEzNzg1ZmVlNWIiLCJpc0FkbWluIjpmYWxzZSwibG9naW4iOiJNYW5zdXJiZWsiLCJpYXQiOjE2MTQ1OTQ4MTd9.GFiOtj9Zd4MxxFAYqmiIXnjr_jdSFph8DMFyklYF9oM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"603bea396107df1068522bb2\",\r\n    \"answers\": [\r\n        {\r\n            \"_id\": \"603bea396107df1068522bb3\",\r\n            \"answer\": 3\r\n        },\r\n        {\r\n            \"_id\": \"603bea396107df1068522bb4\",\r\n            \"answer\": 2\r\n        },\r\n        {\r\n            \"_id\": \"603bea396107df1068522bb5\",\r\n            \"answer\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/quiz/check",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"quiz",
+								"check"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "result",
+			"item": [
+				{
+					"name": "Get results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/result",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"result"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "slides",
+			"item": [
+				{
+					"name": "Get Slides",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDNhODZlOWVjZjQ3ZjA1Y2NlMTVmZWUiLCJpc0FkbWluIjpmYWxzZSwibG9naW4iOiJNYW5zdXIiLCJpYXQiOjE2MTc0MjQyNDJ9.VR7Hy4fvS9CSjHl5UJuo01BguDE9TmIcaDlvdHBpf1Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/slide",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"slide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add slide",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDNhODZlOWVjZjQ3ZjA1Y2NlMTVmZWUiLCJpc0FkbWluIjpmYWxzZSwibG9naW4iOiJNYW5zdXIiLCJpYXQiOjE2MTc0MjQyNDJ9.VR7Hy4fvS9CSjHl5UJuo01BguDE9TmIcaDlvdHBpf1Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "slide",
+									"type": "file",
+									"src": "/C:/Users/Mansur/Downloads/asdfgsdfgsdfg_1-Laboratoriya ishi _1615823898874 (1).docx"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Mansur/Downloads/1.jpeg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/slide",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"slide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Slide by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

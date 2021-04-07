@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
         cb(null, `uploads/${file.fieldname}`);
     },
     filename: (req, file, cb) => {
-        cb(null ,req.body.name + '_'+ path.parse(file.originalname).name+'_'+Date.now() + path.extname(file.originalname));
+        cb(null ,req.body.name + '_'+ escape(path.parse(file.originalname).name)+'_'+Date.now() + path.extname(file.originalname));
     }
 });
 const fileFilter = (req, file, cb) => {
@@ -62,7 +62,10 @@ router.post('/',auth, async (req, res) => {
         return res.status(400).send(error.details[0].message)
         
         await upload(req, res, async (err)=>{
-            if(req.imageValidationError )
+            if(err)
+{
+    return res.status(400).send("erooroeorj")
+}            if(req.imageValidationError )
                 return res.status(400).send(req.imageValidationError)
     
             if(req.fileValidationError)
@@ -146,7 +149,7 @@ router.get('/:id', async (req, res) => {
     let book = await Book.findById(req.params.id);
     if (!book)
       return res.status(404).send('Berilgan IDga teng bo\'lgan kiton topilmadi');
-    return res.download(path.join(path.parse(__dirname).dir, book.filepath));
+    return res.download(path.join(book.filepath));
   });
 router.get('/image/:id', async (req, res)=>{
     if (!mongoose.Types.ObjectId.isValid(req.params.id))
